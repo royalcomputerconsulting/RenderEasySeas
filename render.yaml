@@ -1,0 +1,7 @@
+services:
+  - type: static_site
+    name: easyseas-production
+    env: static
+    buildCommand: bun install && bun run build
+    staticPublishPath: dist
+    pullRequestPreviewsEnabled: true
