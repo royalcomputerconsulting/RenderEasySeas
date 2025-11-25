@@ -1,15 +1,10 @@
 services:
-  - type: web            # NOT "static_site"
-    runtime: static      # tells Render this is a static site
+  - type: web
+    runtime: static        # or env: static on older examples, but runtime: static is current
     name: easyseas-production
-    plan: free           # or starter/standard/pro, etc.
-
-    repo: https://github.com/royalcomputerconsulting/RenderEasySeas
-    branch: main
 
     buildCommand: bun install && bun run build
     staticPublishPath: dist
 
-    autoDeployTrigger: commit
     previews:
       generation: automatic
